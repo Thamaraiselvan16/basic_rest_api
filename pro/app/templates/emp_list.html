@@ -1,0 +1,35 @@
+<!-- yourappname/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Django App</title>
+</head>
+<body>
+    <h1>Hello, Django!</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Info</th>
+
+            </tr>
+        </thead>
+        {% for emp in employee_data %}
+        <tbody>
+            <tr>
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.department }}</td>
+                <td><a href="{% url 'emp-id' emp.id %}">Details</a></td>
+                <td><a href="{% url 'emp-add' %}">ADD</a></td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>

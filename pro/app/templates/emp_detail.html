@@ -1,0 +1,36 @@
+<!-- yourappname/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Django App</title>
+</head>
+<body>
+    <h1>Hello, Django!</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Department</th>
+                {% comment %} <th>Info</th> {% endcomment %}
+
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>{{ employee_details.id }}</td>
+                <td>{{ employee_details.name }}</td>
+                <td>{{ employee_details.department }}</td>
+                {% comment %} <td><a href="{% url 'emp-id' employee_details.id %}">Details</a></td> {% endcomment %}
+            </tr>
+        </tbody>
+        
+    </table>
+</body>
+</html>
+
+
